@@ -8,6 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Background & Text Styling */
 body {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #fff;
@@ -28,6 +29,7 @@ h1 {
     font-size: 2.2rem;
 }
 
+/* Navigation Bar */
 nav ul {
     list-style: none;
     padding: 10px;
@@ -42,7 +44,7 @@ nav ul li a {
     color: #ffcc00;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav ul li a:hover {
@@ -50,7 +52,13 @@ nav ul li a:hover {
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
 }
 
-/* Grid Layout for Network Cards */
+/* Highlight the active page */
+nav ul li a.current {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Network Cards Grid */
 .network-container {
     display: flex;
     justify-content: center;
@@ -59,53 +67,74 @@ nav ul li a:hover {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     width: 90%;
     max-width: 1100px;
     margin: auto;
 }
 
+/* Individual Card */
 .card {
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+    padding: 20px;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
     color: #fff;
     overflow: hidden;
+    position: relative;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
 }
 
+/* Profile Image */
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 3px solid #ffcc00;
     transition: transform 0.3s;
+    object-fit: cover;
 }
 
 .card:hover img {
     transform: scale(1.1);
 }
 
+/* Name Styling */
 .card h3 {
-    margin-top: 10px;
-    font-size: 1.1rem;
+    margin-top: 12px;
+    font-size: 1.2rem;
 }
 
 /* Footer Styling */
 footer {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 0.9rem;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1rem;
     background: rgba(0, 0, 0, 0.5);
     width: 90%;
     border-radius: 10px;
     margin: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
 }
