@@ -31,10 +31,12 @@ h1 {
 nav ul {
     list-style: none;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
     margin: 10px;
 }
 
@@ -59,7 +61,6 @@ nav ul li a:hover {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Contact Page Styling */
 .contact-container {
     display: flex;
@@ -74,7 +75,8 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
     padding: 25px;
     border-radius: 15px;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -118,8 +120,8 @@ nav ul li a:hover {
     display: inline-block;
     margin: 5px;
     padding: 8px 15px;
-    background: #2a5298;  /* White background */
-    color: #000000;  /* Black text */
+    background: #2a5298;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -127,11 +129,10 @@ nav ul li a:hover {
 }
 
 .social-btn:hover {
-    background: #ffcc00;  /* Gold hover effect */
-    color: #000000;  /* Black text */
+    background: #ffcc00;
+    color: #000000;
     transform: scale(1.1);
 }
-
 
 /* Profile Image */
 .profile-image {
@@ -146,7 +147,6 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-
 /* Footer Styling */
 footer {
     margin-top: 20px;
@@ -156,4 +156,30 @@ footer {
     width: 90%;
     border-radius: 10px;
     margin: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-card {
+        width: 95%;
+    }
 }
