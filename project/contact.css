@@ -51,6 +51,11 @@ nav ul li a:hover {
     color: #fff;
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
 }
+/* Highlight the active page */
+nav ul li a.current {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 .flag {
     width: 20px;
